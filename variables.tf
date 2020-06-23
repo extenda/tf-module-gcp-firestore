@@ -18,10 +18,7 @@ variable query_scope {
   default     = "COLLECTION"
 }
 
-
 variable indexes {
-  type = list(object({
-    collection = string
-    fields = map(string)
-    }))
+  description = "The map of collection being indexed and the fields supported by this index"
+  type        = map(list(map(string)))
 }
