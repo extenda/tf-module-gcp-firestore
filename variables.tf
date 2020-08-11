@@ -14,6 +14,7 @@ variable database {
 }
 
 variable query_scope {
+  type        = string
   description = "The scope at which a query is run. Possible values are: COLLECTION, COLLECTION_GROUP"
   default     = "COLLECTION"
 }

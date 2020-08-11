@@ -1,7 +1,8 @@
 module firestore {
   source = "../"
 
-  project_id = "project-id"
+  project_id  = "project-id"
+  query_scope = "COLLECTION_GROUP"
   indexes = {
     collection1 = [
       {
