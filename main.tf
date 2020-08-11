@@ -2,8 +2,10 @@ resource "google_firestore_index" "fs_index" {
   provider = google-beta
   for_each = var.indexes
 
-  collection = each.key
-  project    = var.project_id
+  collection  = each.key
+  project     = var.project_id
+  query_scope = var.query_scope
+  database    = var.database
 
 dynamic fields {
   for_each = distinct(flatten([ for k, v in var.indexes : [
