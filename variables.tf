@@ -13,6 +13,11 @@ variable database {
   default     = "(default)"
 }
 
+variable collection {
+  description = "The collection name to create index for"
+  type        = string
+}
+
 variable query_scope {
   type        = string
   description = "The scope at which a query is run. Possible values are: COLLECTION, COLLECTION_GROUP"

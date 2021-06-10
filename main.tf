@@ -2,7 +2,7 @@ resource "google_firestore_index" "fs_index" {
   provider = google-beta
   for_each = var.indexes
 
-  collection  = each.key
+  collection  = var.collection
   project     = var.project_id
   query_scope = var.query_scope
   database    = var.database

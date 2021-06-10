@@ -3,8 +3,9 @@ module firestore {
 
   project_id  = "project-id"
   query_scope = "COLLECTION_GROUP"
+  collection = "collection1"
   indexes = {
-    collection1 = [
+    index1 = [
       {
         field_path = "name"
         order = "ASCENDING"
@@ -14,7 +15,7 @@ module firestore {
         order = "ASCENDING"
       },
     ],
-    collection2 = [
+    index2 = [
       {
         field_path = "name"
         order = "ASCENDING"
