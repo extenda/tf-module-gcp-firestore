@@ -13,6 +13,11 @@ variable database {
   default     = "(default)"
 }
 
+variable backup_retention {
+  description = "Retention period for backups in seconds, default 4 weeks"
+  default     = "2419000s"
+}
+
 variable collection {
   description = "The collection name to create index for"
   type        = string

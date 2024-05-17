@@ -21,3 +21,11 @@ dynamic fields {
     }
   }
 }
+
+resource "google_firestore_backup_schedule" "daily-backup" {
+  project   = var.project_id
+  database  = var.database
+  retention = var.backup_retention
+
+  daily_recurrence {}
+}
