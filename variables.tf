@@ -57,20 +57,20 @@ variable database_backup_retention {
   default = "259200s"
 }
 
-##Indexes
+# ##Indexes
 
-variable index_collection {
-  description = "The collection name to create index for"
-  type        = string
-}
+# variable index_collection {
+#   description = "The collection name to create index for"
+#   type        = string
+# }
 
-variable index_query_scope {
-  type        = string
-  description = "The scope at which a query is run. Possible values are: COLLECTION, COLLECTION_GROUP"
-  default     = "COLLECTION"
-}
+# variable index_query_scope {
+#   type        = string
+#   description = "The scope at which a query is run. Possible values are: COLLECTION, COLLECTION_GROUP"
+#   default     = "COLLECTION"
+# }
 
-variable indexes {
-  description = "The map of collection being indexed and the fields supported by this index"
-  type        = map(list(map(string)))
-}
+# variable indexes {
+#   description = "The map of collection being indexed and the fields supported by this index"
+#   type        = map(list(map(string)))
+# }
