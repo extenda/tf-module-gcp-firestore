@@ -7,7 +7,7 @@ resource "google_firestore_database" "database" {
   app_engine_integration_mode       = var.database_app_engine_integration_mode
   point_in_time_recovery_enablement = var.database_point_in_time_recovery_enablement
   delete_protection_state           = var.database_delete_protection_state
-  deletion_policy                   = var.database_deletion_policy
+  deletion_policy                   = var.terraform_deletion_policy
 }
 
 resource "google_firestore_backup_schedule" "daily-backup" {
