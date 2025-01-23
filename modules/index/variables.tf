@@ -10,7 +10,9 @@ variable region {
   default = "europe-west-1"
 }
 
-##Indexes
+variable database_name {
+  description = "The database name to apply the index"
+}
 
 variable collection {
   description = "The collection name to create index for"
