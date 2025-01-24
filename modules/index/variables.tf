@@ -1,3 +1,5 @@
+##General
+
 variable project_id {
   description = "The ID of the project in which the resource belongs"
   type        = string
@@ -8,9 +10,8 @@ variable region {
   default = "europe-west-1"
 }
 
-variable database {
-  description = "The Firestore database id. Defaults to (default)"
-  default     = "(default)"
+variable database_name {
+  description = "The database name to apply the index"
 }
 
 variable collection {
