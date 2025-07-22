@@ -10,11 +10,22 @@ resource "google_firestore_database" "database" {
   deletion_policy                   = var.terraform_deletion_policy
 }
 
-resource "google_firestore_backup_schedule" "daily-backup" {
-  project  = var.project_id
-  database = google_firestore_database.database.name
-
+resource "google_firestore_backup_schedule" "default" {
+  count = var.database_enable_backup_schedule == "true" ? 1 : 0
+  project   = var.project_id
+  database  = google_firestore_database.database.name
   retention = var.database_backup_retention
 
-  daily_recurrence {}
+  dynamic "daily_recurrence" {
+    for_each = var.database_backup_schedule == "daily-backup" ? [1] : []
+    content {
+    }						
+  }
+
+  dynamic "weekly_recurrence" {
+    for_each = var.database_backup_schedule == "weekly-backup" ? [1] : []
+    content {
+      day = var.database_backup_weekly_recurrence
+    }
+  }
 }
