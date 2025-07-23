@@ -23,6 +23,21 @@ variable database_type {
   default = "FIRESTORE_NATIVE"
 }
 
+variable database_enable_backup_schedule {
+  description = "Enable database backup"
+  default = "true"
+}
+
+variable database_backup_schedule {
+  description = "The backup schedule. Possible values are: daily-backup, weekly-backup"
+  default = "daily-backup"
+}
+
+variable database_backup_weekly_recurrence {
+  description = "When database_backup_schedule is weekly-backup, on which day the backup is created"
+  default = "MONDAY"
+}
+
 variable database_concurrency_mode {
   description = "The concurrency control mode to use for this database. Possible values are: OPTIMISTIC, PESSIMISTIC, OPTIMISTIC_WITH_ENTITY_GROUPS"
   default = "OPTIMISTIC"
@@ -45,7 +60,7 @@ variable database_delete_protection_state {
 
 variable terraform_deletion_policy {
   description = "Deletion behavior for this database. If the deletion policy is ABANDON, the database will be removed from Terraform state but not deleted from Google Cloud upon destruction. If the deletion policy is DELETE, the database will both be removed from Terraform state and deleted from Google Cloud upon destruction."
-  default = "ABANDON"
+  default = "DELETE"
 }
 
 variable database_backup_retention {
