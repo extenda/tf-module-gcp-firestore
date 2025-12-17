@@ -39,7 +39,7 @@ resource "google_service_account" "firestore_sa" {
 resource "google_project_iam_member" "database_user" {
   project = var.project_id
   role    = "roles/datastore.user"
-  member  = "serviceAccount:${google_service_account.firestore_sa[0].email}"
+  member  = "serviceAccount:${google_service_account.firestore_sa.email}"
 
   condition {
     title       = "allow_specific_database"
