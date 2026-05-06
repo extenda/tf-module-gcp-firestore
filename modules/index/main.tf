@@ -20,3 +20,17 @@ dynamic fields {
     }
   }
 }
+
+resource "google_firestore_field" "ttl" {
+  count = var.ttl_field != null ? 1 : 0
+
+  project    = var.project_id
+  database   = var.database_name
+  collection = var.collection
+  field      = var.ttl_field
+
+  ttl_config {}
+
+  # Disable single field indexes for the TTL field to avoid hotspots
+  index_config {}
+}

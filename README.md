@@ -23,5 +23,6 @@ Cloud Firestore indexes enable simple and complex queries against documents in a
 | database_delete_protection_state | State of database delete protection for this database. Possible values are DELETE_PROTECTION_STATE_UNSPECIFIED, DELETE_PROTECTION_ENABLED, DELETE_PROTECTION_DISABLED | `string` | `DELETE_PROTECTION_ENABLED` | no
 | collection | The collection name to create index for | `string` | n/a | yes |
 | indexes | The map of collection being indexed and the fields supported by this index | `map(list(map(string)))` | n/a | yes |
+| ttl_field | Optional. The timestamp field name to use for TTL policy on this collection. Firestore will automatically delete documents when the timestamp in this field expires. Example: `expireAt`. See [TTL deletion documentation](https://firebase.google.com/docs/firestore/enterprise/ttl#time_to_live_overview) for details on how TTL works. | `string` | `null` | no |
 | project\_id | The ID of the project in which the resource belongs | `string` | n/a | yes |
 | query\_scope | The scope at which a query is run. Possible values are: COLLECTION, COLLECTION_GROUP | `string` | `COLLECTION` | no |

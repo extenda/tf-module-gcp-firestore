@@ -29,3 +29,9 @@ variable indexes {
   description = "The map of collection being indexed and the fields supported by this index"
   type        = map(list(map(string)))
 }
+
+variable ttl_field {
+  description = "Optional. The name of the timestamp field to use for TTL (Time to Live) policy on this collection. If set, Firestore will automatically delete documents when the timestamp in this field expires."
+  type        = string
+  default     = null
+}
